@@ -1,0 +1,12 @@
+type Categorie {
+    id: ID
+    name: String
+}
+
+type Mutation {
+    createCategory(cat: CatInput!): String!
+}
+
+input CatInput {
+    name: String!
+}

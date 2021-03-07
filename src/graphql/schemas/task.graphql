@@ -1,0 +1,23 @@
+# import Categorie from './category.graphql'
+
+type Query {
+    getTasks: [Task]!
+    getTask(id: ID!): Task!
+}
+
+type Task {
+    id: ID
+    name: String
+    done: Boolean
+    categories: [Categorie!]!
+}
+
+type Mutation {
+    createTask(task: TaskInput!): String!
+    deleteTask(id: ID!): String!
+}
+
+input TaskInput {
+    name: String
+    categories: [String!]!
+}
